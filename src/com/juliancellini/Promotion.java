@@ -11,7 +11,7 @@ public class Promotion {
         return this.discount;
     }
 
-    private Promotion(Double discount){
+    private Promotion(Double discount) {
         this.discount = discount;
     }
 
