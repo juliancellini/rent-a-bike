@@ -21,7 +21,7 @@ public class RentalTest {
 
     @Test
     public void cannotCreateRentalPeriodNullPeriod() {
-        try{
+        try {
             RentalPeriod rp = new RentalPeriod(
                     null,
                     LocalDateTime.of(2019, 1, 1, 10, 0)
@@ -30,7 +30,7 @@ public class RentalTest {
         } catch (IllegalArgumentException ex) {
             //Assert.pass()
         }
-        try{
+        try {
             RentalPeriod rp = new RentalPeriod(
                     LocalDateTime.of(2019, 1, 1, 10, 0),
                     null
@@ -39,7 +39,7 @@ public class RentalTest {
         } catch (IllegalArgumentException ex) {
             //Assert.pass()
         }
-        try{
+        try {
             RentalPeriod rp = new RentalPeriod(
                     LocalDateTime.of(2019, 1, 1, 10, 0),
                     LocalDateTime.of(2019, 1, 1, 10, 0)
@@ -71,7 +71,7 @@ public class RentalTest {
     public void canRentalAdjacent() {
         Bike bike = new Bike("canRentalAdjacent");
 
-        try{
+        try {
             bike.getSchedule().addPeriod(rp4);
             bike.getSchedule().addPeriod(rp5);
         } catch (IllegalArgumentException ex) {
@@ -124,7 +124,7 @@ public class RentalTest {
         Bike bike = new Bike("cannotRentalOverlapTwiceError");
         bike.getSchedule().addPeriod(rp1);
 
-        try{
+        try {
             bike.getSchedule().addPeriod(rp1);
             Assert.fail();
         } catch (IllegalArgumentException ex) {
@@ -146,7 +146,7 @@ public class RentalTest {
     public void canRentalAfterRemove() {
         Bike bike = new Bike("canRentalAfterRemove");
 
-        try{
+        try {
             bike.getSchedule().addPeriod(rp1);
             bike.getSchedule().removePeriod(rp1);
             bike.getSchedule().addPeriod(rp1);
@@ -163,7 +163,7 @@ public class RentalTest {
 
     @Test
     public void cannotGetRentalTypeNullPeriod() {
-        try{
+        try {
             RentalType rt = RentalType.getRentalType(
                     null,
                     LocalDateTime.of(2019, 1, 1, 10, 0)
@@ -172,7 +172,7 @@ public class RentalTest {
         } catch (IllegalArgumentException ex) {
             //Assert.pass()
         }
-        try{
+        try {
             RentalType rt = RentalType.getRentalType(
                     LocalDateTime.of(2019, 1, 1, 10, 0),
                     null
@@ -181,7 +181,7 @@ public class RentalTest {
         } catch (IllegalArgumentException ex) {
             //Assert.pass()
         }
-        try{
+        try {
             RentalType rt = RentalType.getRentalType(
                     LocalDateTime.of(2019, 1, 1, 10, 0),
                     LocalDateTime.of(2019, 1, 1, 10, 0)
@@ -253,7 +253,7 @@ public class RentalTest {
     public void cannotGetRentalNullPeriod() {
         Bike b = new Bike("cannotGetRentalNullPeriod");
 
-        try{
+        try {
             Rental r = new Rental(b,
                     "user",
                     null,
@@ -264,7 +264,7 @@ public class RentalTest {
         } catch (IllegalArgumentException ex) {
             //Assert.pass()
         }
-        try{
+        try {
             Rental r = new Rental(b,
                     "user",
                     LocalDateTime.of(2019, 1, 1, 10, 0),
@@ -275,7 +275,7 @@ public class RentalTest {
         } catch (IllegalArgumentException ex) {
             //Assert.pass()
         }
-        try{
+        try {
             Rental r = new Rental(b,
                     "user",
                     LocalDateTime.of(2019, 1, 1, 10, 0),
