@@ -52,7 +52,7 @@ in checking the superposition in the schedule of a bike and modeling the pricing
       Models a period of time, calculates overlaps between other period. 
       I implement `equals` to be able to remove from Schedule collection.
        
-    * Promotion
+   * Promotion
     
        Gives two constants: `FAMILY` and a null object `NULL` promotions as Singletons
 
